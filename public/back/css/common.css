@@ -20,7 +20,9 @@ ul {
   list-style: none;
 }
 
-
+.red {
+  color:#A94442;
+}
 
 /*-------------登录页样式---------------*/
 .mg-t {
@@ -42,6 +44,10 @@ ul {
   left:0;
   top:0;
   z-index: 99;
+  transition:all 1s;
+}
+.aside-left.move {
+  left:-180px;
 }
 .aside-left .title {
   font-size:24px;
@@ -77,16 +83,26 @@ ul {
 .aside-left .navlist i {
   margin-right:5px;
 }
-.aside-left .navlist .child {
-  padding-left:20px;
+.aside-left .navlist .child a{
+  padding-left:60px;
 }
-.current {
+.aside-left .navlist a.current {
   background-color: #1D1F21;
   border-left:3px solid #006699;
 }
 /*左侧侧边栏完成*/
 
 /*---------------------------右侧-----------------------*/
+.aside-right {
+  width: 100%;
+  height:600px;
+  padding-left:180px;
+  transition:all 1s;
+}
+.aside-right.moveLeft,
+.aside-right .head.moveLeft {
+  padding-left:0px;
+}
 .aside-right .head {
   width: 100%;
   height: 50px;
@@ -96,6 +112,7 @@ ul {
   position:fixed;
   left: 0;
   top: 0;
+  transition:all 1s;
 }
 .aside-right .head a {
   width: 50px;
@@ -105,3 +122,12 @@ ul {
 }
 
 /*右侧主体*/
+.aside-right .container-fluid {
+  padding-top:50px;
+  margin-top:20px;
+}
+.echarts1,
+.echarts2 {
+  width: 48%;
+  height: 500px;
+}
