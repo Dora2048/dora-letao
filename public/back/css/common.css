@@ -19,6 +19,11 @@ a:link {
 ul {
   list-style: none;
 }
+.table.table-bordered tr th,
+.table.table-bordered tr td {
+  text-align:center;
+  vertical-align: middle;
+}
 
 .red {
   color:#A94442;
@@ -34,7 +39,7 @@ ul {
   text-align: center;
 }
 
-/*---------------------------左侧侧边栏样式---------------*/
+/*-左侧侧边栏样式--*/
 
 .aside-left {
   width: 180px;
@@ -92,7 +97,7 @@ ul {
 }
 /*左侧侧边栏完成*/
 
-/*---------------------------右侧-----------------------*/
+/*右侧*/
 .aside-right {
   width: 100%;
   height:600px;
