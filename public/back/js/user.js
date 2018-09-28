@@ -36,14 +36,38 @@ $(function(){
             render(page);
           }
         });
-
-
       }
     })
   }
   render();  //进入页面渲染第一屏数据
 
+  //3.编辑状态功能
+  //需求分析：点击按钮，切换状态，动态渲染的元素不能绑定事件，通过事件委托达到目的
+  $("tbody").on("click",".btn",function(){
+    //获取当前按钮所在行的id
+    //console.log(111);
+    var id = $(this).parent().parent().data("id");
+    console.log(id);
+    var isDelete = $(this).hasClass("btn-success") ? 1 : 0 ;
+    console.log(isDelete);
+    //点击按钮，向后台请求数据，改变状态
+    $.ajax({
+      url:"/user/updateUser",
+      type:"post",
+      data:{
+        id:id,
+        isDelete:isDelete
+      },
+      success: function(info){
+        console.log(info);
+        if(info.success){
+          //请求成功后需要重新渲染数据才能改变状态
+          render();
+        }
+      }
+    })
 
+  })
 
 
 

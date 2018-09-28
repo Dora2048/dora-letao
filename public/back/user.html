@@ -123,7 +123,7 @@
 <!--准备模板-->
 <script type="text/template" id="tmp">
   {{ each rows v i }}
-    <tr>
+    <tr data-id={{ v.id }}>
       <td>{{ (page-1)*size + 1+i }}</td>
       <td>{{ v.username }}</td>
       <td>{{ v.mobile }}</td>
