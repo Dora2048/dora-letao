@@ -66,34 +66,54 @@
       <li class="active">二级分类</li>
     </ol>
     <!--添加按钮-->
-    <!-- Button trigger modal -->
-    <button type="button" class="btn btn-default mb" data-toggle="modal" data-target="#myModal">
-      添加分类
-    </button>
+    <div>
+      <button type="button" class="btn btn-default mb" data-toggle="modal" data-target="#myModal">
+        添加分类
+      </button>
 
-    <!-- Modal -->
-    <div class="modal fade" id="myModal" tabindex="-1">
-      <div class="modal-dialog modal-sm">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" ><span
-                >&times;</span></button>
-            <h4 class="modal-title" id="myModalLabel">添加分类</h4>
-          </div>
-          <div class="modal-body">
-            <input type="text" placeholder="请添加二级分类" class="form-control">
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-            <button type="button" class="btn btn-primary">添加</button>
+      <!-- Modal -->
+      <div class="modal fade" id="myModal" tabindex="-1">
+        <div class="modal-dialog modal-sm">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal"><span
+              >&times;</span></button>
+              <h4 class="modal-title" id="myModalLabel">添加分类</h4>
+            </div>
+            <div class="modal-body">
+              <input type="text" placeholder="请添加二级分类" class="form-control">
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+              <button type="button" class="btn btn-primary">添加</button>
+            </div>
           </div>
         </div>
       </div>
     </div>
 
+    <!--分页结构-->
+    <div class="text-right">
+      <ul id="pagintor"></ul>
+    </div>
+    <!--主体列表-->
+
+    <table class="table table-bordered">
+      <thead>
+      <tr>
+        <th widht="10%">序号</th>
+        <th widht="30%">一级分类名称</th>
+        <th widht="30%">二级分类名称</th>
+        <th widht="30%">二级分类LOGO</th>
+      </tr>
+      </thead>
+      <tbody>
+
+      </tbody>
+    </table>
+
   </div>
 </div>
-
 
 <!--摸态框-->
 <div class="modal fade" id="logoutModal">
@@ -117,11 +137,32 @@
 </div>
 
 
+<!--准备模板-->
+
+<script type="text/template" id="tmp">
+  {{ each rows v i }}
+    <tr>
+      <td>{{ (page-1)*size +1 +i }}</td>
+      <td>{{ v.categoryId }}</td>
+      <td>{{ v.brandName }}</td>
+      <td><img src={{ v.brandLogo }} height="50px"></td>
+    </tr>
+  {{ /each }}
+</script>
+<!--模板二-->
+<script type="text/template" id="tmp2">
+
+</script>
+
+
 <script src="./lib/jquery/jquery.js"></script>
 <script src="./lib/bootstrap/js/bootstrap.js"></script>
 <script src="./lib/bootstrap-validator/js/bootstrapValidator.js"></script>
+<script src="./lib/bootstrap-paginator/bootstrap-paginator.js"></script>
+<script src="./lib/artTemplate/template-web.js"></script>
 <script src="./lib/nprogress/nprogress.js"></script>
 <script src="./js/checkLogin.js"></script>
 <script src="./js/common.js"></script>
+<script src="./js/second.js"></script>
 </body>
 </html>
