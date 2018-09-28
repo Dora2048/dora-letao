@@ -122,7 +122,7 @@
 <script type="text/template" id="tmp">
   {{ each rows v i }}
     <tr>
-      <td>{{ i + 1 }}</td>
+      <td>{{ (page-1)*size + 1+i }}</td>
       <td>{{ v.username }}</td>
       <td>{{ v.mobile }}</td>
       <!-- isDelete 标记当前用户的状态
