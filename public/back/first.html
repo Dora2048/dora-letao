@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.css">
+  <link rel="stylesheet" href="./lib/bootstrap-validator/css/bootstrapValidator.css">
+  <link rel="stylesheet" href="./lib/nprogress/nprogress.css">
+  <link rel="stylesheet" href="./css/common.css">
+</head>
+<body>
+<!----------------------左侧侧边栏------------------------------->
+<!--左侧侧边栏为公共区域，css写到common中-->
+<div class="aside-left">
+  <!--标题-->
+  <div class="title">前端26期</div>
+  <!--头像-->
+  <div class="user">
+    <img src="./images/default.png" alt="">
+    <p>超级管理员</p>
+  </div>
+  <!--导航-->
+  <ul class="navlist">
+    <li>
+      <a href="user.html">
+        <i class="glyphicon glyphicon-user"></i>
+        <span>用户管理</span>
+      </a>
+    </li>
+    <li>
+      <a href="#" class="category">
+        <i class="glyphicon glyphicon-list"></i>
+        <span>分类管理</span>
+      </a>
+      <div class="child">
+        <a href="first.html" class="current">一级分类</a>
+        <a href="second.html">二级分类</a>
+      </div>
+    </li>
+    <li>
+      <a href="product.html">
+        <i class="glyphicon glyphicon-tags"></i>
+        <span>产品管理</span>
+      </a>
+    </li>
+  </ul>
+</div>
+<!-------------------------右侧-------------------------------->
+<div class="aside-right">
+  <!--右侧头部-->
+  <div class="head">
+    <a href="#" class="pull-left icon-menu">
+      <i class="glyphicon glyphicon-align-justify"></i>
+    </a>
+    <a href="#" class="pull-right icon-logout">
+      <i class="glyphicon glyphicon-log-out"></i>
+    </a>
+  </div>
+
+  <!--右侧主体,使用流式布局-->
+  <div class="container-fluid">
+    <!--右侧导航，使用组件-->
+    <ol class="breadcrumb">
+      <li><a href="index.html">管理系统</a></li>
+      <li><a href="javascript:;">分类管理</a></li>
+      <li class="active">一级分类</li>
+    </ol>
+    <!--添加按钮-->
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-default mb" data-toggle="modal" data-target="#myModal">
+      添加分类
+    </button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" >
+      <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">添加分类</h4>
+          </div>
+          <div class="modal-body">
+            <input type="text" placeholder="请添加一级分类" class="form-control">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+            <button type="button" class="btn btn-primary">添加</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th width="20%">序号</th>
+          <th width="80%">一级分类名</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>户外管</td>
+        </tr>
+      </tbody>
+    </table>
+
+
+  </div>
+</div>
+
+
+<!--摸态框-->
+<div class="modal fade" id="logoutModal">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span
+        >&times;</span></button>
+        <h4 class="modal-title">温馨提示</h4>
+      </div>
+      <div class="modal-body">
+        <p class="red"><i class="glyphicon glyphicon-info-sign"></i>
+          您确定要退出后台管理系统吗？</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+        <button type="button" class="btn btn-primary" id="logout">退出</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script src="./lib/jquery/jquery.js"></script>
+<script src="./lib/bootstrap/js/bootstrap.js"></script>
+<script src="./lib/bootstrap-validator/js/bootstrapValidator.js"></script>
+<script src="./lib/nprogress/nprogress.js"></script>
+<script src="./js/checkLogin.js"></script>
+<script src="./js/common.js"></script>
+</body>
+</html>

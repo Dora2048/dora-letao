@@ -28,7 +28,9 @@ ul {
 .red {
   color:#A94442;
 }
-
+.mb {
+  margin-bottom:20px;
+}
 /*-------------登录页样式---------------*/
 .mg-t {
   margin-top:150px;

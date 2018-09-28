@@ -39,10 +39,11 @@ $(function(){
     //$(".navlist .child").slideToggle();
   })
 
-// 2. 点击菜单高亮
-  $(".navlist a").on("click",function(){
-    $(this).toggleClass("current");
-  })
+//// 2. 点击菜单高亮
+//  $(".navlist a").on("click",function(){
+//    $(this).toggleClass("current");
+//  })
+//此功能可在html页面中添加类完成，效率更高
 
 // 3. 左侧菜单栏切换
 //点击icon-menu按钮，整个左侧侧边栏收起
