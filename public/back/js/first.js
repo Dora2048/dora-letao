@@ -18,7 +18,7 @@ $(function () {
         pageSize: pageSize || 5,
       },
       success: function (info) {
-        console.log(info);
+        //console.log(info);
         //绑定模板，渲染页面
         $("tbody").html(template("tmp", info));
 
@@ -41,4 +41,60 @@ $(function () {
   }
 
   render();
+
+
+  //2.添加分类功能
+  //需求分析：点击添加分类，添加摸态框弹出，此功能组件中已经内置
+  //         添加表单校验功能，若不输入内容点击确定，给出提示信息，若输入内容，校验成功后，点击确认，发送请求，向后台传输数据
+
+  //2.1 表单校验插件初始化
+  $("#form").bootstrapValidator({
+    //2. 指定校验时的图标显示，默认是bootstrap风格
+    feedbackIcons: {
+      valid: 'glyphicon glyphicon-ok',
+      invalid: 'glyphicon glyphicon-remove',
+      validating: 'glyphicon glyphicon-refresh'
+    },
+    fields: {
+      categoryName: {
+        validators: {
+          //不为空验证
+          notEmpty: {
+            message: "请输入一级分类名称"
+          }
+        }
+      }
+    }
+  })
+  //2.2注册表单校验成功事件，并禁止表单自动提交，通过Ajax向后台发送数
+  $("#form").on("success.form.bv",function(e){
+    e.preventDefault();
+    $.ajax({
+      url: "/category/addTopCategory",
+      type: "post",
+      data: $("#form").serialize(),
+      dataType: "json",
+      success: function(info){
+        console.log(info);
+        if(info.success){
+          //关闭摸态框
+          $("#myModal").modal("hide");
+          console.log(111);
+          //请求成功后要重新渲染页面
+          currentPage = 1;
+          render();
+          console.log(222)
+
+          //重置表单
+          $("#form").data("bootstrapValidator").resetForm();
+          console.log(333)
+        }
+      }
+    })
+
+  })
+
+
+
+
 })

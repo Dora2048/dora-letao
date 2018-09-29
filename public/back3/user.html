@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.css">
+</head>
+<body>
+<div id="aside"></div>
+
+<div class="main container-fluid">
+  <!--标题-->
+  <ol class="breadcrumb mt">
+    <li><a href="index.html">系统管理</a></li>
+    <li class="active">用户管理</li>
+  </ol>
+
+  <!--内容列表-->
+  <table class="table table-bordered  table-hover">
+    <thead>
+    <tr>
+      <th>序号</th>
+      <th>用户名</th>
+      <th>手机号</th>
+      <th>状态</th>
+      <th>操作</th>
+    </tr>
+    </thead>
+    <tbody>
+
+    </tbody>
+  </table>
+
+  <!--分页结构-->
+  <div class="text-right">
+    <!-- 3.x 的版本需要准备 ul -->
+    <ul id="paginator"></ul>
+  </div>
+
+
+</div>
+
+
+<!--准备模板-->
+
+<script type="text/template" id="tmp">
+  {{ each rows v i }}
+  <tr>
+    <td>{{ (page-1)*size+1+i }}</td>
+    <td>{{ v.username }}</td>
+    <td>{{ v.mobile }}</td>
+    <td>{{ v.isDelete === 1? "正常" : "禁用" }}</td>
+    <td data-id="{{ v.id }}">
+      {{ if v.isDelete === 0 }}
+      <button class="btn btn-success">启用</button>
+      {{ else }}
+      <button class="btn btn-danger">禁用</button>
+      {{ /if }}
+    </td>
+  </tr>
+  {{ /each }}
+</script>
+
+<script src="./lib/jquery/jquery.js"></script>
+<script src="./lib/artTemplate/template-web.js"></script>
+<script src="./lib/bootstrap/js/bootstrap.js"></script>
+<script src="./lib/bootstrap-paginator/bootstrap-paginator.js"></script>
+<script src="./js/user.js"></script>
+
+
+</body>
+</html>

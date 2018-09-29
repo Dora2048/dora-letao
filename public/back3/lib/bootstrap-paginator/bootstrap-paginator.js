@@ -20,7 +20,7 @@
 
     "use strict"; // jshint ;_;
 
-
+    //console.log(1)
     /* Paginator PUBLIC CLASS DEFINITION
      * ================================= */
 
