@@ -84,6 +84,7 @@
               </div>
 
               <div class="modal-body">
+
                 <div class="form-group">
                   <div class="dropdown">
                     <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
@@ -98,18 +99,18 @@
                     <!--设置隐藏域，存储hot-->
                     <input type="hidden" name="hot" value="1">
                   </div>
-
-
                 </div>
 
                 <div class="form-group">
-                  <input type="text" placeholder="请添加二级分类" class="form-control">
+                  <input type="text" placeholder="请添加二级分类" class="form-control" name="brandName">
                 </div>
+
                 <div class="form-group">
                   <label for="fileupload" class="btn btn-default">上传图片</label>
                   <input type="file" name="pic1" id="fileupload" style="display: none;"
                     data-url="/category/addSecondCategoryPic">
                 </div>
+
                 <div class="form-group imgbox">
                   <img src="./images/none.png" alt="" width=100 height=100>
                   <input type="hidden" name="brandLogo">
@@ -128,7 +129,7 @@
 
     <!--分页结构-->
     <div class="text-right">
-      <ul id="pagintor"></ul>
+      <ul id="paginator"></ul>
     </div>
     <!--主体列表-->
 

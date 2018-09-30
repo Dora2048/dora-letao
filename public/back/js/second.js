@@ -21,7 +21,7 @@ $(function () {
         $("tbody").html(template("tmp", info));
 
         //2.分页插件初始化
-        $("#pagintor").bootstrapPaginator({
+        $("#paginator").bootstrapPaginator({
           bootstrapMajorVersion: 3,//默认是2，如果是bootstrap3版本，这个参数必填
           currentPage: info.page,//当前页
           totalPages: Math.ceil(info.total / info.size),//总页数
@@ -135,7 +135,7 @@ $(function () {
 
   })
 
-  //6.注册校验成功事件
+  ////6.注册校验成功事件
   $("#form").on("success.form.bv", function (e) {
     e.preventDefault();
     $.ajax({
@@ -158,14 +158,12 @@ $(function () {
 
           // 重置只能重置表单元素, 下拉菜单的按钮和图片需要手动重置
           $('#dropdownTxt').text("请选择一级分类");
-          $('.imgBox img').attr("src", "../images/none.png");
-          //$(".imgbox img").attr("src", "");
-
+          $('.imgbox img').attr("src", "images/none.png");
         }
-
       }
     })
   })
+
 
 
 })
