@@ -1,0 +1,85 @@
+html,body {
+  width: 100%;
+  height: 100%;
+}
+ul {
+  list-style: none;
+  padding:0;
+  margin:0;
+}
+.lt-container {
+  width: 100%;
+  height:100%;
+  min-width:320px;
+  max-width:640px;
+  margin:0 auto;
+  background-color: #f99;
+  position: relative;
+  padding-top:45px;
+  padding-bottom:55px;
+  overflow:hidden;
+}
+/*-----------------头部区域-----------------*/
+.lt-header {
+  height: 45px;
+  width: 100%;
+  background-color: #069;
+  /*在ISO低端版本中fixed定位失效，可用绝对定位替代完成布局*/
+  position:absolute;
+  left:0;
+  top:0;
+  padding:0 45px;
+}
+.lt-header .h-left,
+.lt-header .h-right {
+  width: 45px;
+  height: 45px;
+  line-height: 45px;
+  text-align: center;
+  position:absolute;
+  top:0;
+  color:#fff;
+}
+.lt-header .h-left {
+  left:0
+}
+.lt-header .h-right {
+  right:0;
+}
+.lt-header p {
+  font-size: 20px;
+  color:#fff;
+  text-align: center;
+  line-height:45px;
+  margin:0;
+}
+
+
+
+
+
+/*------------------底部区域---------------------*/
+.lt-footer {
+  height: 55px;
+  width: 100%;
+  position:absolute;
+  left:0;
+  bottom:0;
+  background-color: #069;
+}
+.lt-footer ul li {
+  float:left;
+  width: 25%;
+  text-align: center;
+}
+.lt-footer ul li a {
+  color:#fff;
+  display:block;
+  width: 100%;
+  height: 100%;
+  height:55px;
+  padding-top:8px;
+}
+.lt-footer ul li a.current {
+  color:orange;
+}
