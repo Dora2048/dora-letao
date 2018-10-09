@@ -131,7 +131,9 @@ img {
   height: 30px;
   line-height:30px;
 }
-
+.lt-history ul li a {
+  font-size:12px;
+}
 .lt-history .content ul li:not(:last-child) {
   border-bottom: 1px dashed red;
 }
