@@ -16,7 +16,7 @@ $(function () {
     //  var jsonStr = JSON.stringify(arr);
     //  localStorage.setItem("search-list",jsonStr);
 
-    var jsonStr = localStorage.getItem("search-list");
+    var jsonStr = localStorage.getItem("search-list")||"[]";
     //console.log(jsonStr);
     var arr = JSON.parse(jsonStr);
     //console.log(arr);
@@ -78,23 +78,23 @@ $(function () {
   $(".lt-main .btn-search").on("click", function () {
     //console.log(333);
     //获取input的内容
-    var txt = $(".lt-main .lt-search input").val().trim();
-    console.log(txt);
-    if (txt == "") {
+    var key = $(".lt-main .lt-search input").val().trim();
+    console.log(key);
+    if (key == "") {
       mui.toast('请输入搜索关键字', {duration: 'long', type: 'div'})
     }
     //取出数组
     var arr = getHistory();
     console.log(arr);
     //如果数组中含有输入项则删除，不含有输入项则添加
-    if (arr.indexOf(txt) != -1) {
-      arr.splice(arr.indexOf(txt), 1)
+    if (arr.indexOf(key) != -1) {
+      arr.splice(arr.indexOf(key), 1)
     }
     //如果数组长度大于10，从后边删除
     if (arr.length >= 10) {
       arr.pop();
     }
-    arr.unshift(txt);
+    arr.unshift(key);
     console.log(arr);
     //将编辑后的arr转为jsonStr
     var jsonStr = JSON.stringify(arr);
@@ -104,7 +104,8 @@ $(function () {
     render();
     //清空input
     $(".lt-main .lt-search input").val("");
-
+// 跳转到商品列表页
+    location.href = "searchList.html?key=" + key;
 
   })
 
