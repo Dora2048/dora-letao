@@ -23,13 +23,11 @@
 <div class="lt-container">
   <!--头部区域-->
   <div class="lt-header">
-    <a href="#" class="h-left">
-      <i class="fa fa-home"></i>
+    <a href="index.html" class="h-left">
+      <i class="mui-icon mui-icon-back
+      "></i>
     </a>
-    <p>乐淘商城</p>
-    <a href="#" class="h-right">
-      <i class="fa fa-search"></i>
-    </a>
+
   </div>
 
   <!--主体区域-->
@@ -37,11 +35,37 @@
     <div class="mui-scroll-wrapper">
       <div class="mui-scroll">
         <!--这里放置真实显示的DOM内容-->
+        <!--搜索框-->
         <div class="lt-search">
           <input type="text" placeholder="请输入搜索关键字">
           <button class="mui-btn mui-btn-primary">搜索</button>
         </div>
-
+        <!--历史记录-->
+        <div class="lt-history">
+          <div class="title mui-clearfix">
+            <span class="mui-pull-left">搜索历史</span>
+            <span class="mui-pull-right">
+              <i class="mui-icon mui-icon-trash"></i>
+              清空记录
+            </span>
+          </div>
+          <div class="content">
+            <ul>
+              <li>
+                <a class="mui-pull-left" href="#">1</a>
+                <i class="mui-pull-right mui-icon mui-icon-closeempty"></i>
+              </li>
+              <li>
+                <a class="mui-pull-left" href="#">1</a>
+                <i class="mui-pull-right mui-icon mui-icon-closeempty"></i>
+              </li>
+              <li>
+                <a class="mui-pull-left" href="#">1</a>
+                <i class="mui-pull-right mui-icon mui-icon-closeempty"></i>
+              </li>
+            </ul>
+          </div>
+        </div>
 
       </div>
     </div>
