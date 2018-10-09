@@ -7,13 +7,17 @@ ul {
   padding:0;
   margin:0;
 }
+img {
+  display:block;
+  width:100%;
+}
 .lt-container {
   width: 100%;
   height:100%;
   min-width:320px;
   max-width:640px;
   margin:0 auto;
-  background-color: #f99;
+  background-color: #fff;
   position: relative;
   padding-top:45px;
   padding-bottom:55px;
@@ -82,4 +86,14 @@ ul {
 }
 .lt-footer ul li a.current {
   color:orange;
+}
+
+
+
+.lt-search {
+  padding:10px;
+}
+.lt-search input {
+  height: 30px;
+  border: 1px solid #069;
 }

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <!--引入mui框架样式-->
+  <link rel="stylesheet" href="./lib/mui/css/mui.css">
+  <!--设置视口-->
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>Title</title>
+  <!--引入字体图标库-->
+  <link rel="stylesheet" href="./lib/fa/css/font-awesome.css">
+  <!--引入样式-->
+  <link rel="stylesheet" href="./css/common.css">
+  <!--引入ICO图标-->
+  <link rel="icon" href="favicon.ico">
+
+</head>
+
+<body>
+<!--首页布局-->
+<!--头部，页脚固定，中间自适应-->
+<div class="lt-container">
+  <!--头部区域-->
+  <div class="lt-header">
+    <a href="#" class="h-left">
+      <i class="fa fa-home"></i>
+    </a>
+    <p>乐淘商城</p>
+    <a href="#" class="h-right">
+      <i class="fa fa-search"></i>
+    </a>
+  </div>
+
+  <!--主体区域-->
+  <div class="lt-main">
+    <div class="mui-scroll-wrapper">
+      <div class="mui-scroll">
+        <!--这里放置真实显示的DOM内容-->
+        <div class="lt-search">
+          <input type="text" placeholder="请输入搜索关键字">
+          <button class="mui-btn mui-btn-primary">搜索</button>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+
+  <!--底部区域-->
+  <div class="lt-footer">
+    <ul>
+      <li><a href="index.html">
+        <i class="fa fa-home"></i>
+        <p>首页</p>
+      </a></li>
+      <li><a href="category.html">
+        <i class="fa fa-bars"></i>
+        <p>分类页</p>
+      </a></li>
+      <li><a href="cart.html">
+        <i class="fa fa-shopping-cart"></i>
+        <p>购物车</p>
+      </a></li>
+      <li><a href="user.html">
+        <i class="fa fa-user"></i>
+        <p>用户中心</p>
+      </a></li>
+
+    </ul>
+  </div>
+</div>
+
+
+<!--引入mui框架-->
+<script src="./lib/mui/js/mui.js"></script>
+<script src="./js/common.js"></script>
+</body>
+</html>
